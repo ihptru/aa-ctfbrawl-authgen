@@ -1,0 +1,10 @@
+Armagetron Advanced script for CTF BRAWL Tournament
+
+It generates authorities file for tournament servers
+
+
+Usage: ./ctfbrawl_authgen.py link_to_wiki_page
+---
+
+It will return an output with team leaders, super leaders and admins
+
