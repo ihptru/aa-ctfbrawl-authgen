@@ -32,15 +32,15 @@ def parse(url):
         content += "\n"
 
     content += "#### admins ####\n"
-    admins = re.findall("\">(.*)</a></b> <.*>\((.*)\)</span.*", data.split('id="Admins"')[1].split('<p><br />')[0])
-    for record in admins:
-        content += "USER_LEVEL " + record[1] + " 1\n"
+    admins = re.findall(".*<.*>\((.*)\)</span.*", data.split('id="Admins"')[1].split('id="Super_Leaders"')[0])
+    for admin in admins:
+        content += "USER_LEVEL " + admin + " 1\n"
     content += "\n"
 
     content += "#### super leaders ####\n"
-    superleaders = re.findall("\">(.*)</a></b> <.*>\((.*)\)</span.*", data.split('id="Super_Leaders"')[1].split('<p><br />')[0])
-    for record in superleaders:
-        content += "USER_LEVEL " + record[1] + " 7\n"
+    superleaders = re.findall(".*<.*>\((.*)\)</span.*", data.split('id="Super_Leaders"')[1].split('id="Brackets"')[0])
+    for superleader in superleaders:
+        content += "USER_LEVEL " + superleader + " 7\n"
     content += "\n"
 
     print(content)
